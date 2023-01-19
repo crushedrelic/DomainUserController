@@ -7,7 +7,8 @@ foreach($line in $users){ # Read line by line the content of the file that is ap
   $user2 >> Cleanusers.txt
   $user3= $line.substring(50,25).trim() # Take third column, trim spaces and write into a file.
   $user3 >> Cleanusers.txt
-  $queryusers = Get-Content Cleanusers.txt
+  }
+$queryusers = Get-Content Cleanusers.txt
 foreach ($line2 in $queryusers) # take required parameters
 {
   net user /domain $line2 | findstr "Comment Password expires User's comment active"›› result.txt
